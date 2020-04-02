@@ -9,5 +9,5 @@ def is_weekday():
     return 0 <= day.weekday() < 5
 
 # Test if today is a weekday
-# assert is_weekday()
-# print(is_weekday())
+assert is_weekday()
+print(is_weekday())
