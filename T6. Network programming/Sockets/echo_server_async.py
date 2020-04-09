@@ -23,12 +23,12 @@ async def echo_server(address, loop):
 async def echo_handler(client):
     while True:  # Create generator for yielding
         if not loop.is_closed():  # Check for opened event loop
-            data = await loop.sock_recv(client, 10000)  # None blocking socket receiving task
+            data = await loop.sock_recv(client, 4096)  # None blocking socket receiving task
             pprint(data)
             asyncio.wait(print(i) for i in range(50000))  # Set extra load for example
             if not data:
                 break  # Exit if no client data send after successful connection
-            await loop.sock_sendall(client, b"Got: " + data)  # Send answer to client. Not blocking task
+            await loop.sock_sendall(client, b"Server answer: " + data)  # Send answer to client. Not blocking task
     print("Connection closed")
     client.close()  # Client connection closing
 
