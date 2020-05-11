@@ -1,0 +1,51 @@
+•	Python OOP 
+
+1.	Args and kwargs variables. Packaging and extraction
+2.	Class variables, methods and instance. 
+3.	Instance variables and methods
+4.	Built-in variables: __name__, __package__, __file__, __doc__, __class__, __dict__, __mro__, super().
+5.	Magic methods. Classification of magic methods
+6.	Object descriptors
+7.	Built-in decorator functions: property, classmethod, staticmethod, 
+8.	__Slots__, class instance changings
+9.	Weakrefs usage explanation.
+10.	Abstract Class. Abstract methods
+11.	Meta Classes. Creation and scope of usage
+
+•	Design Patterns 	
+
+1.	Creational patterns.
+a.	Factory Method
+b.	Abstract Factory
+c.	Prototype
+d.	Singleton
+
+2.	Structural patterns
+a.	Adapter
+b.	Bridge
+c.	Decorator. Function and class decorators
+d.	Facade
+e.	Flyweight
+f.	Proxy
+
+3.	Behavioral patterns
+a.	Command
+b.	Observer
+c.	State	
+
+•	Asynchronous programming 	
+1.	Threading. GIL, Lock, RLock, Semaphore, Event, Condition.
+2.	Multiprocessing. Queue, pipe and the other ways of multiprocessing communication
+3.	Generators
+4.	Asyncio
+a.	Order of execution
+b.	Concurrency
+c.	Future states
+d.	Exception handling
+
+•	Network programming 	
+1.	Sockets
+2.	Socket module
+3.	Servers socket methods
+4.	Client Socket methods
+5.	Asyncio sockets
