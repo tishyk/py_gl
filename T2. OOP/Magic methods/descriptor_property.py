@@ -6,18 +6,18 @@ class Property:
     def __get__(self, instance, cls):
         # instance: is the instance being manipulated
         # e.q. CPlatform instance
-        print("Get attribute and call it:", self.attribute)
+        print("*** Get attribute and call it:", self.attribute)
         attribute = instance.__dict__[self.attribute]
         assert callable(attribute), "Object is not callable"
         return attribute()
 
     def __set__(self, instance, new_value):
-        print("Set attribute:", new_value)
+        print("=== Set attribute:", new_value)
         assert callable(new_value), "Object is not callable"
         instance.__dict__[self.attribute] = new_value
 
     def __delete__(self, instance):
-        print("Delete attribute:", self.attribute)
+        print("--- Delete attribute:", self.attribute)
         del instance.__dict__[self.attribute]
 
 class MyPropertyUsage:
@@ -32,6 +32,6 @@ class MyPropertyUsage:
 
 myprop = MyPropertyUsage()
 myprop.my_property
-myprop.my_property = help
-myprop.my_property
-del myprop.my_property
+# myprop.my_property = help
+# myprop.my_property
+# del myprop.my_property
