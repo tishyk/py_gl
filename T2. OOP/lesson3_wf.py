@@ -15,8 +15,6 @@ class Client:
         self.enabled = False
         self.ip = ip
         self.client_type = client_type
-        self.server = WeakValueDictionary()
-        self.server['server'] = kwargs.get('server')
 
     def run(self):
         print(f'Run {self.ip}')
