@@ -7,13 +7,41 @@ import json
 from weakref import WeakValueDictionary
 
 
+class IP_Descriptor():
+    def __init__(self, name):
+        self.ip_variable = name
+
+    def __get__(self, instance, cls):
+        """ instance: instance being manipulated. Ex. Client instance"""
+        if instance.enabled:
+            print("IP address: {}".format(instance.__dict__[self.ip_variable]))
+        else:
+            raise RuntimeError('Host disabled. Failed to get ip')
+        return instance.__dict__[self.ip_variable]
+
+    def __set__(self, instance, value):
+        if not instance.enabled:
+            raise RuntimeError("Could not set ip address for disabled host")
+        else:
+            assert isinstance(value, str), "It is not possible to set ip address as int object"
+            assert len(value.split('.')) == 4, "Invalid string value for ip address"
+            instance.__dict__[self.ip_variable] = value
+
+    def __delete__(self, instance):
+        instance.enabled = False
+        print(f"Host {instance.__dict__[self.ip_variable]} disabled")
+        del instance.__dict__[self.ip_variable]
+
+
 class Client:
+    ip = IP_Descriptor('ip')
+
     def __new__(cls, *args, **kwargs):
         return super().__new__(cls)
 
     def __init__(self, ip, client_type, **kwargs):
         self.__dict__.update(kwargs)
-        self.enabled = False
+        self.enabled = True
         self.ip = ip
         self.client_type = client_type
 
@@ -57,33 +85,6 @@ class Server:
         for client in clients:
             self.weak_active_clients[client.ip] = client
         pass
-
-
-class IP_Descriptor():
-    def __init__(self, name):
-        self.ip_variable = name
-
-    def __get__(self, instance, cls):
-        """ instance: instance being manipulated. Ex. Client instance"""
-        if instance.enabled:
-            print("IP address: {}".format(instance.__dict__[self.ip_variable]))
-        else:
-            raise RuntimeError('Host disabled. Failed to get ip')
-        return instance.__dict__[self.ip_variable]
-
-    def __set__(self, instance, value):
-        if not instance.enabled:
-            raise RuntimeError("Could not set ip address for disabled host")
-        else:
-            assert isinstance(value, str), "It is not possible to set ip address as int object"
-            assert len(value.split('.')) == 4, "Invalid string value for ip address"
-            instance.__dict__[self.ip_variable] = value
-
-
-def __delete__(self, instance):
-    print(f"Delete: {instance.__name__}")
-    del instance.__dict__[self.ip_variable]
-
 
 if __name__ == "__main__":
     server = Server("192.168.1.200", **json.load(open('Meta class/event_default.json')))
