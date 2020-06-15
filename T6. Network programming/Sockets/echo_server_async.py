@@ -17,7 +17,7 @@ async def echo_server(address, loop):
     while True:
         client, addr = await loop.sock_accept(con)  # Accept connection from a single client
         print("Connection from", addr)  # Show client ip address
-        future = loop.create_task(echo_handler(client))  # Asynchronous clients connections
+        task = loop.create_task(echo_handler(client))  # Asynchronous clients connections
 
 
 async def echo_handler(client):
@@ -25,7 +25,7 @@ async def echo_handler(client):
         if not loop.is_closed():  # Check for opened event loop
             data = await loop.sock_recv(client, 4096)  # None blocking socket receiving task
             pprint(data)
-            asyncio.wait(print(i) for i in range(50000))  # Set extra load for example
+            await asyncio.sleep(2)  # Set extra load for example
             if not data:
                 break  # Exit if no client data send after successful connection
             await loop.sock_sendall(client, b"Server answer: " + data)  # Send answer to client. Not blocking task

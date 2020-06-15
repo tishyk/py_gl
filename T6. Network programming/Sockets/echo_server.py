@@ -2,19 +2,21 @@
 
 from socket import *
 
+
 def echo_server(address):
     con = socket(AF_INET, SOCK_STREAM)
     con.bind(address)
-    con.listen(2)
+    con.listen(5)
     print('Server started..')
     while True:
         client, addr = con.accept()
         print("Connection from", addr)
         echo_handler(client)
 
+
 def echo_handler(client):
     while True:
-        data = client.recv(10000)
+        data = client.recv(1000)
         print('*', data)
         if not data:
             break
@@ -22,5 +24,6 @@ def echo_handler(client):
     print("Connection closed")
     client.close()
 
+
 if __name__ == "__main__":
-    echo_server(('', 8080))
+    echo_server(('', 9000))
