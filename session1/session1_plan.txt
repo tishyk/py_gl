@@ -1,0 +1,14 @@
+1. Default parameter value in function and class
+2. Arbitrary Arguments, *args for function and class
+3. Arbitrary Keyword Arguments, **kwargs for function and class
+4. __dict__ variable for class instance
+5. Difference between class variable and class instance(object) variables
+6. How to get and set class variables inside of objects
+7. Difference between class __dict__ and object __dict__ after adding to object new attributes.
+8. Definition of object method, class method and static method.
+9. getattr, setattr, delattr built-in functions
+10. The base __dict__ storage, object variable. Where the magic methods live
+11. How to get all parent classes with __mro__ variable
+12. Calling parent class methods with super() method. Who is a parent for parent class.
+13. __name__ variable
+14. __doc__variable
