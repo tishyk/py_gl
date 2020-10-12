@@ -12,3 +12,7 @@
 12. Calling parent class methods with super() method. Who is a parent for parent class.
 13. __name__ variable
 14. __doc__variable
+
+
+Links:
+3х часовой урок по метапрограммированию Д.Бизли, на сегодня достаточно только первого часа - https://www.youtube.com/watch?v=sPiWg5jSoZI&list=PLZ0p9kEryvIH13ukavszXlosfwEWhU6FT&index=9&t=4866s
