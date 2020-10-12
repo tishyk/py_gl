@@ -1,9 +1,9 @@
 Нужно написать класс который будет создавать объект этого же класса если в конструкторе будет присутствовать
- str ""А"" или ""В"" но не что либо другое. 
+ str "А" или "В" но не что либо другое. 
 Если в конструктор передается "С" или с "В" также передается "С" то должен быть создан простой базовый обьект (object).
 
 Пример выполнения:
-mc1 = MyClass(""A"")   --> MyClass obj
-mc2 = MyClass(""A"",""B"")        --> MyClass obj
-not_mc1 = MyClass(""C"")     --> object
-not_mc2 = MyClass(""B"",""C"")     --> object
+mc1 = MyClass("A")   --> MyClass obj
+mc2 = MyClass("A")        --> MyClass obj
+not_mc1 = MyClass("C")     --> object
+not_mc2 = MyClass("B","C")     --> object
