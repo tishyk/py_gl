@@ -1,0 +1,40 @@
+# 1. Описати атрибут ip за допомогою дескрипторів.
+#     атрибут може бути встановленим лише якщо значення - str,
+#     відповідає шаблону "x.x.x.x" та кожен блок може бути конвертований в int
+# 2. Створити ssh объект та викликати метод connect (імітація підключення)
+# 3. Змінити доступ до методу execute. Якщо  self.connected == False має викликатися метод wait_for_connection (імітіція перепідключення),
+#   якщо підключення встановлено має спрацювати метод execute.
+
+
+
+
+
+class SSH():
+    ip = IP_Descriptor('ip')
+
+    def __init__(self, ip):
+        self.ip = ip
+
+    def __getattr__(self, item):  # for not implemented attributes only
+        print('Get attr {}'.format(item))
+        return 'not implemented'
+
+#   def __getattribute__(self, item):
+#        print("Get attribute: {}".format(item))
+#        return super().__getattribute__(item)
+
+    def connect(self):
+        # Connection via supported connection type
+        #password = getpass.getpass()
+        # create connection to host
+        self.connected = True
+
+    def close_connection(self):
+        # Close supported connection type
+        self.connected = False
+
+    def wait_for_connection(self, timeout, polling=0.1):
+        print('wait for connection..')
+        
+    def execute(self, timeout, polling=0.1):
+        print('wait for connection..')
