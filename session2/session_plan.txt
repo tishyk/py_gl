@@ -23,3 +23,7 @@ Descriptors:
   __get__, __set__, __delete__
   How to set up an attribute
   
+  Links:
+  Property - https://www.python-course.eu/python3_properties.php, https://www.youtube.com/watch?v=jCzT9XFZ5bw&t=23s&ab_channel=CoreySchafer
+  Magic methods - https://github.com/tishyk/py_gl/blob/master/TT.%20Literature/magicmethods.pdf
+  Descriptors - https://www.python-course.eu/python3_descriptors.php
