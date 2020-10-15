@@ -1,0 +1,25 @@
+ Property
+  - get
+  - set
+  - delete
+ Magic methods:
+    __new__, __init__, __call__, __del__
+  Represantation magic methods:
+    __str__, __repr__, __unicode__, __format__, __hash__, __nonzero__, __bool__, __dir__.
+  Comparison methods:
+    ==	__eq__,  !=	__ne__, <	__lt__, <=	__le__, >	__gt__,  >=	__ge__.
+  Unary operators:
+    __pos__, __neg__,__abs__, __invert__, __round__, __floor__, __ceil__, __trunc__
+  Normal arithmetic operators:
+    __add__, __sub__, __mul__, __floordiv__, __div__, __truediv__, __future__, __mod__, __divmod__, __pow__
+  Reflected arithmetic operators:
+    __radd__, __rsub__, __rmul__, __rfloordiv__, __rdiv__
+  Conversion magic methods:
+    __int__, __float__, __oct__, __hex__
+  Attributes get and set:
+    __getattribute__, __getattr__, __setattr__
+  
+Descriptors:
+  __get__, __set__, __delete__
+  How to set up an attribute
+  
